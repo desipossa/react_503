@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1.on {
+            color: #f00
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="H1">반짝이는 TEXT</h1>
+    <button id="BTN">그만 멈춰 ~~</button>
+    <script>
+        const H = document.querySelector('#H1');
+        const BTN = document.querySelector('#BTN');
+        let 참거짓 = true;
+        const 반짝이 = setInterval(() => {
+            if (참거짓) {
+                H.classList.add('on')
+            } else {
+                H.classList.remove('on')
+            }
+            참거짓 = !참거짓;
+        }, 1000);
+        BTN.addEventListener('click', () => clearInterval(반짝이))
+
+
+    </script>
+</body>
+
+</html>

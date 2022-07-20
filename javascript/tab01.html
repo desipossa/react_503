@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 01 - tab</title>
+</head>
+
+<body>
+    <h1 id="h1"><span>여기를 클릭해줘 ...</span></h1>
+    <script>
+
+        // 1. 화살표 함수
+        const 화살표함수 = (e) => {
+            console.log(this, e.target, e.currentTarget)
+        }
+
+        h1.addEventListener('click', 화살표함수);
+
+        // 2. 스프레드 연산자
+        const 동물 = {
+            leg: 4,
+            mouse: 1,
+        }
+
+        const 말 = {
+            ...동물,
+            sound: '이히힝'
+        }
+        console.log(말.leg)
+        const 고양이 = {
+            leg: 4,
+            mouse: 1,
+            sound: '야옹'
+        }
+        const 강아지 = {
+            leg: 4,
+            mouse: 1,
+            sound: '멍멍'
+        }
+
+        const 그냥배열 = ['하나', '둘', '셋'];
+        const 복사한배열 = [...그냥배열, '넷'];
+        const 복사한배열2 = 그냥배열.concat(['다섯']);
+        console.log(복사한배열)
+        console.log(복사한배열2)
+        console.log(그냥배열)
+
+        // 3. 비구조할당...
+        const 그냥객체 = {
+            name: '객체',
+            age: 100,
+            color: '#f00'
+        }
+
+        const { age, color, name } = 그냥객체;
+
+        console.log(그냥객체.name);
+        console.log(그냥객체['name']);
+        console.log(name);
+
+
+        // 4. 논리연산자를 이용한 if
+        let num = ' ';
+        num && console.log('있음');
+        num || console.log('있음');
+
+        // 5. 삼항연산자
+        num ? console.log('있음') : console.log('없음');
+
+
+
+    </script>
+</body>
+
+</html>
