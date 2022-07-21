@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
 import CreateTodo from "./CreateTodo";
 const App = () => {
@@ -8,26 +8,36 @@ const App = () => {
     { id: 2, content: '오늘할 일 2' },
   ]);
 
-  console.log(nextId.current);
+  const [todo, setDodo] = useState({
+    id: nextId.current,
+    content: ''
+  });
 
   const onChange = (e) => {
     const { name, value } = e.target;
     setDodo({ id: nextId.current, [name]: value });
   }
-  const [todo, setDodo] = useState({});
 
   const onCleate = () => {
+    nextId.current++;
+    if (todo.content.length < 5) {
+      alert('더 입력해주삼...')
+      return
+    }
     setTodolist([...todoList, todo]);
-    nextId.current += 1;
+    console.log(todo.content, todoList)
+    setDodo({
+      id: nextId.current,
+      content: ''
+    })
   }
+
 
   return (
     <>
       {/* 리스트를 뿌려주마... */}
       <TodoList TodoList={todoList} />
-      <CreateTodo onCleate={onCleate} onChange={onChange} />
-
-
+      <CreateTodo onCleate={onCleate} onChange={onChange} todo={todo} />
       {/* <button onClick={() => setTodolist([...todoList, { id: 3, content: '오늘할 일 3' }])}>리스트 바꾸기</button> */}
     </>
   )
