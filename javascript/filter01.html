@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="UL"></ul>
+    <script>
+        const DATA = [
+            { id: 1, content: "나는 메로나다." },
+            { id: 2, content: "나는 바밤다다." },
+            { id: 3, content: "나는 거북이다." },
+            { id: 4, content: "나는 솔로다." },
+            { id: 5, content: "나는 메로나다." },
+        ];
+
+        const newDATA = DATA.filter(el => el.id !== 4);
+        console.log(newDATA);
+        const RESURT = newDATA.map(el => '<li>' + el.content + '</li>').join('')
+        console.log(RESURT);
+        const UL = document.querySelector('#UL');
+        UL.innerHTML = RESURT;
+    </script>
+</body>
+
+</html>
