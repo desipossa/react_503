@@ -19,7 +19,6 @@ const App = () => {
   }
 
   const onCleate = () => {
-
     if (todo.content.length < 5) {
       alert('더 입력해주삼...')
       return
@@ -30,12 +29,12 @@ const App = () => {
       id: nextId.current,
       content: ''
     });
-    console.log(todo.content, todoList);
+
   }
 
-  const onDelate = (id) => {
-    setTodolist(todoList.filter(todo => todo.id !== id))
-    nextId.current--;
+  const onDelate = (current) => {
+    setTodolist(todoList.filter(todo => todo.id !== current))
+    //nextId.current--;
   }
 
   return (
@@ -43,6 +42,7 @@ const App = () => {
       {/* 리스트를 뿌려주마... */}
       <TodoList TodoList={todoList} onDelate={onDelate} />
       <CreateTodo onCleate={onCleate} onChange={onChange} todo={todo} />
+      {console.log(todoList)}
       {/* <button onClick={() => setTodolist([...todoList, { id: 3, content: '오늘할 일 3' }])}>리스트 바꾸기</button> */}
     </>
   )
