@@ -33,11 +33,15 @@ const App = () => {
     console.log(todo.content, todoList);
   }
 
+  const onDelate = (id) => {
+    setTodolist(todoList.filter(todo => todo.id !== id))
+    nextId.current--;
+  }
 
   return (
     <>
       {/* 리스트를 뿌려주마... */}
-      <TodoList TodoList={todoList} />
+      <TodoList TodoList={todoList} onDelate={onDelate} />
       <CreateTodo onCleate={onCleate} onChange={onChange} todo={todo} />
       {/* <button onClick={() => setTodolist([...todoList, { id: 3, content: '오늘할 일 3' }])}>리스트 바꾸기</button> */}
     </>
