@@ -19,17 +19,18 @@ const App = () => {
   }
 
   const onCleate = () => {
-    nextId.current++;
+
     if (todo.content.length < 5) {
       alert('더 입력해주삼...')
       return
     }
+    nextId.current++;
     setTodolist([...todoList, todo]);
-    console.log(todo.content, todoList)
     setDodo({
       id: nextId.current,
       content: ''
-    })
+    });
+    console.log(todo.content, todoList);
   }
 
 
