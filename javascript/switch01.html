@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .switch.on {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="switch">나는 참이야</div>
+
+
+    <script>
+        const toggle = document.querySelector('.switch');
+        console.log(toggle);
+
+        let TF = true;
+
+        toggle.addEventListener('click', function () {
+            TF ? toggle.innerHTML = `나는 거짓이야` : toggle.innerHTML = `나는 참이야`;
+
+
+            // TF ? toggle.classList.add('on') : toggle.classList.remove('on');
+            // addClass() -> classList.add() 
+            // removeClass() -> classList.remove() 
+            // toggleClass() -> classList.toggle 
+            // hasClass() -> classList.contain
+
+
+            this.classList.toggle('on');
+            TF = !TF;
+        })
+    </script>
+</body>
+
+</html>

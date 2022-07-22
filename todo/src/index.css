@@ -1,0 +1,23 @@
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Wrapper {
+  background: #fafafa;
+  padding: 30px;
+  margin: 30px;
+  border: 1px solid #ddd;
+}
+
+.TodoLIst {
+  background: #f7f7f7;
+  margin: 0 0 30px 0;
+}
+
+.TodoLIst li {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 10px;
+}
